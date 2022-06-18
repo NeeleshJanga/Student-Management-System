@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Students</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#">Students Management System</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/students}">View
+						Students</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/logout}">Logout</a></li>
+			</ul>
+			&nbsp;&nbsp;
+			<form class="form-inline my-2 my-lg-0" method="POST">
+				<input class="form-control mr-sm-2" type="search"
+					placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div
+			class="col-lg-6 col-md-6 col-sm-6 container justify-content-center">
+			<h1 class="text-center">List of Students</h1>
+		</div>
+		<div class="row">
+			<div class="col-lg-3">
+				<a class="btn btn-primary" th:href="@{/student/new}" role="button">Add
+					Student</a>
+			</div>
+		</div>
+		<br>
+		<table class="table table-hover table-bordered">
+			<caption>List of People</caption>
+			<thead class="table-dark text-center">
+				<tr>
+					<th scope="col" style="width: 10%">Id</th>
+					<th scope="col" style="width: 10%">FirstName</th>
+					<th scope="col" style="width: 10%">LastName</th>
+					<th scope="col" style="width: 10%">Email</th>
+					<th scope="col" style="width: 10%">Password</th>
+					<th scope="col">Operation</th>
+				</tr>
+			</thead>
+			<tbody class="text-center">
+				<tr th:each="student: ${students}" th:object="${student}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{firstName}"></td>
+					<td th:text="*{lastName}"></td>
+					<td th:text="*{email}"></td>
+					<td th:text="*{password}"></td>
+					<td><a th:href="@{/update/student/{id}(id = ${student.id})}"
+						class="btn btn-warning">Update</a> <a
+						th:href="@{/delete/student/{id}(id = ${student.id})}"
+						class="btn btn-danger">Delete</a> <a
+						th:href="@{/update/student/password/{id}(id = ${student.id})}"
+						class="btn btn-warning">Change Password</a></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+</body>
+</html>
