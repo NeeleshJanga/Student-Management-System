@@ -1,9 +1,21 @@
-usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
-           <command> [<args>]
+usage: git <input>
+where <input> can be any of the following:
+1. [--version] 
+2. [--help] 
+3. [-C <path>] 
+4. [-c <name>=<value>]
+5. [--exec-path[=<path>]] 
+6. [--html-path]
+7. [--man-path]
+8. [--info-path]
+9. [-p | --paginate | -P | --no-pager]
+10. [--no-replace-objects] [--bare]
+11. [--git-dir=<path>]
+12. [--work-tree=<path>]
+13. [--namespace=<name>]
+14. [--super-prefix=<path>]
+15. [--config-env=<name>=<envvar>]
+16. <command> [<args>]
 
 These are common Git commands used in various situations:
 
