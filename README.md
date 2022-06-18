@@ -15,7 +15,6 @@ where <input> can be any of the following:
 13. [--namespace=<name>]
 14. [--super-prefix=<path>]
 15. [--config-env=<name>=<envvar>]
-16. [<command> [<args>]]
 
 These are common Git commands used in various situations:
 
